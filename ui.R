@@ -1,6 +1,6 @@
 library(readxl)
 
-workdir <- "/home/cdesantana/DataSCOUT/Culturismo/MVP/dashboard"
+workdir <- "/srv/shiny-server/cns/Culturismo"
 database <- read_xlsx(file.path(workdir,"data/database.xlsx"))
 
 dashboardPage(

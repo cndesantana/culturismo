@@ -1,7 +1,6 @@
 library(shiny)
 library(shinySignals)
 library(dplyr)
-library(bubbles)
 library(stringr)
 library(quanteda)
 library(readtext)
@@ -10,14 +9,10 @@ library(tidyr)
 library(shinydashboard)
 library(shinyFiles)
 library(devtools)
-library(Rfacebook)
 library(lubridate)
 library(stylo)
 library(tidytext)
 library(tm)
-library(wordcloud)
-library(xlsx)
-library(gdata)
 library(readxl)
 library(htmlwidgets)
 library(httr)
@@ -26,8 +21,6 @@ source("bloomfilter.R")
 getFBID <- function(fburl){
    return(unlist(strsplit(httr::POST(url='https://findmyfbid.com',body=list(url = fburl), encode="json")$headers$`amp-redirect-to`,'/'))[5])
 }
-
-workdir <- "/home/cdesantana/DataSCOUT/Objectiva/PapoCorreria/dashboard"
 
 getIndiceDeSentimentoReactions <- function(reactions){
    reacoes <- toupper(reactions)
