@@ -1,14 +1,11 @@
 library(readxl)
 
-workdir <- "/home/cdesantana/DataSCOUT/Culturismo/MVP/dashboard"
-database <- read_xlsx(file.path(workdir,"data/database.xlsx"))
-
 dashboardPage(
-  dashboardHeader(title = "Culturismo"),
+  dashboardHeader(title = "Culturismo"),skin="purple",
   dashboardSidebar(
-    sidebarMenu(
-      menuItem("From Books to Route", tabName = "books2route"),
-      menuItem("From Route to Books", tabName = "route2books")
+    sidebarMenu(      
+      menuItem("From Route to Books", tabName = "route2books"),
+      menuItem("From Books to Route", tabName = "books2route")
     )
   ),
   dashboardBody(
@@ -16,7 +13,7 @@ dashboardPage(
       tabItem("route2books",
         fluidRow(
           box(
-            width = 8, status = "info", solidHeader = TRUE,
+            width = 8, status = "info", solidHeader = TRUE, 
             title = "From Route to Books",
             selectInput("Destination","Destination",
                         as.character(database$cidade), multiple = TRUE),
