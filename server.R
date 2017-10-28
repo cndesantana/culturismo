@@ -14,11 +14,9 @@ function(input, output, session) {
      #plotar um mapa para o locationscidade
      
      #adicionar marcadores (tiles, pop-ups, boxes, etc) nas localidades indicadas em locationslatlon
-     
+  
   })
-  
-  
-  
+
   output$books2routePlot <- renderPlot({
      invalidateLater(1*60*1000)
      #to take a list of books and to return a map with the locations of places present in the listed books

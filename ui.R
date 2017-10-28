@@ -1,5 +1,8 @@
 library(readxl)
 
+#workdir <- "/srv/shiny-server/cns/Culturismo"
+database <- read_xlsx(file.path(workdir,"data/database.xlsx"))
+
 dashboardPage(
   dashboardHeader(title = "Culturismo"),skin="purple",
   dashboardSidebar(
